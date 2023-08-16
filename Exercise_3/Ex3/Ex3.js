@@ -5,7 +5,7 @@ import {createObjectCsvWriter} from 'csv-writer'
 
 /*Create an Octokit object and authenticate using a personal token in order to make the RESTfull API call */
 const Ex3 = new Octokit ({
-    auth: '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',
+    auth: '__MyPersonalAccessToken__',
 });
 
 /*Create the csv file */  
@@ -28,8 +28,8 @@ const items = data.data.items;
 var write = [ ];
 for (var i of items){
     
+
     write.push( {name : i.name ,full_name : i.full_name, id : i.id} ); 
-    
    
 }
 
