@@ -19,8 +19,9 @@ for files in os.listdir():
                 for item in items:
                     input = item.find('inputSymbol')
                     if input is not None and input.text == '_pdg_list':
-                        value = item.find('value').text
-                        csvwrite.append(value)
+                        
+                        for value in (item.find('value').text).split(','):
+                            csvwrite.append(value)
     if csvwrite:
         csvwrite.insert(0,os.path.abspath(files))
         writer.writerow(csvwrite)        
